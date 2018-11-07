@@ -5,19 +5,4 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Factory\" />
-    <Folder Include="AbstractFactory\" />
-    <Folder Include="Builder\" />
-    <Folder Include="Decorator\" />
-    <Folder Include="Command\" />
-    <Folder Include="Adapter\" />
-    <Folder Include="Facade\" />
-    <Folder Include="Bridge\" />
-    <Folder Include="Prototype\" />
-    <Folder Include="Observer\" />
-    <Folder Include="Strategy\" />
-    <Folder Include="Singleton\" />
-  </ItemGroup>
-
 </Project>
