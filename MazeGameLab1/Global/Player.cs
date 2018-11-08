@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MazeGameLab1.Builder
+namespace MazeGameLab1.Global
 {
-    class Builder
+    class Player
     {
     }
 }
