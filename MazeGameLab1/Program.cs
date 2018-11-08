@@ -6,16 +6,36 @@ namespace MazeGameLab1
 {
     class Program
     {
+        enum MonsterTypes
+        {
+            Big, Blue, Fast, Red
+        }
+
         static void Main(string[] args)
         {
             MonsterFactory fact = new MonsterFactory();
 
-            Console.WriteLine("Choose Monster: Big, Blue, Fast, Red");
-            string type = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine($"Choose Monster: {MonsterTypes.Big} {MonsterTypes.Blue} {MonsterTypes.Fast} {MonsterTypes.Red}");
+                string type = Console.ReadLine();
 
-            Monster newMonster = fact.CreateEnemy(type, 10, 10, 500, 10, 140, 4, 4, false);
+                if (Enum.IsDefined(typeof(MonsterTypes), type))
+                {
 
-            newMonster.Talk();
+                    Monster newMonster = fact.CreateEnemy(type, 10, 10, 500, 10, 140, 4, 4, false);
+
+                    newMonster.AddBasicAttack("punch");
+                    newMonster.AddBasicAttack("fast punch");
+                    newMonster.AddBasicAttack("double punch");
+                    newMonster.AddSpecialAttack("big punch");
+                    newMonster.AddSpecialAttack("really big punch");
+
+                    newMonster.Talk();
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }
