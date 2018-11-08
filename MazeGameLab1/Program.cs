@@ -1,6 +1,7 @@
 ﻿using System;
 using MazeGameLab1.Global;
 using MazeGameLab1.Factory;
+using MazeGameLab1.Bridge;
 
 namespace MazeGameLab1
 {
@@ -17,6 +18,7 @@ namespace MazeGameLab1
 
             while (true)
             {
+                Console.WriteLine("-------------------------------------------------------------------");
                 Console.WriteLine($"Choose Monster: {MonsterTypes.Big} {MonsterTypes.Blue} {MonsterTypes.Fast} {MonsterTypes.Red}");
                 string type = Console.ReadLine();
 
@@ -33,6 +35,19 @@ namespace MazeGameLab1
 
                     newMonster.Talk();
                 }
+
+                Console.WriteLine("\nCreating player");
+
+                Player p = new Player("Jhon", 1, false)
+                {
+                    ui = new LightUI()
+                };
+
+                Console.WriteLine(p.ToString() + $" ({p.GetHashCode()})" + "\n" + p.ui.ToString() + $" ({p.ui.GetHashCode()})");
+
+                Console.WriteLine("Changing UI");
+                p.ui = new DarkUI();
+                Console.WriteLine(p.ToString() + $" ({p.GetHashCode()})" + "\n" + p.ui.ToString() + $" ({p.ui.GetHashCode()})");
 
                 Console.WriteLine();
             }
