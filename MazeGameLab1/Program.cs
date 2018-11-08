@@ -46,7 +46,9 @@ namespace MazeGameLab1
                 Director.Construct(MazeBuilder);
                 Maze Maze = MazeBuilder.GetMaze();
                 Maze.Talk();
-              
+
+                Console.WriteLine("-----Builder END-----");
+
                 Console.WriteLine("\nCreating player");
 
                 Player p = new Player("Jhon", 1, false)

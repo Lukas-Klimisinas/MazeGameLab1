@@ -12,10 +12,10 @@ namespace MazeGameLab1.Builder
             Builder.BuildSize(500);
             Builder.BuildPlayerCount(4);
 
-            Player player1 = new Player();
-            Player player2 = new Player();
-            Player player3 = new Player();
-            Player player4 = new Player();
+            Player player1 = new Player("Bob", 5, false);
+            Player player2 = new Player("Bob1", 5, false);
+            Player player3 = new Player("Bob2", 5, false);
+            Player player4 = new Player("Bob3", 5, false);
 
             List<Player> Players = new List<Player>();
             Players.Add(player1);
