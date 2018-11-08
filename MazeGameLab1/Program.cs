@@ -1,6 +1,7 @@
 ﻿using System;
 using MazeGameLab1.Global;
 using MazeGameLab1.Factory;
+using MazeGameLab1.Builder;
 using MazeGameLab1.Bridge;
 
 namespace MazeGameLab1
@@ -14,7 +15,7 @@ namespace MazeGameLab1
 
         static void Main(string[] args)
         {
-            MonsterFactory fact = new MonsterFactory();
+            IFactory fact = new MonsterFactory();
 
             while (true)
             {
@@ -36,6 +37,16 @@ namespace MazeGameLab1
                     newMonster.Talk();
                 }
 
+                Console.WriteLine("\n -----Builder----- \n");
+
+                Director Director = new Director();
+
+                IBuilder MazeBuilder = new MazeBuilder();
+
+                Director.Construct(MazeBuilder);
+                Maze Maze = MazeBuilder.GetMaze();
+                Maze.Talk();
+              
                 Console.WriteLine("\nCreating player");
 
                 Player p = new Player("Jhon", 1, false)

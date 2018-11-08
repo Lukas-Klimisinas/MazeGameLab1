@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MazeGameLab1.Bridge;
 
 namespace MazeGameLab1.Global

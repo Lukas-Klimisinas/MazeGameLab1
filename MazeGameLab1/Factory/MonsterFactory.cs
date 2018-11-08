@@ -5,7 +5,7 @@ using MazeGameLab1.Global;
 
 namespace MazeGameLab1.Factory
 {
-    class MonsterFactory : Factory
+    class MonsterFactory : IFactory
     {
         public override Monster CreateEnemy(string type, int posx, int posy, int h, int s, int dist, int dam, int dr, bool isd)
         {
