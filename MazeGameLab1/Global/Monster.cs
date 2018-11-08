@@ -80,7 +80,7 @@ namespace MazeGameLab1.Global
 
         public void AddSpecialAttack(string Type)
         {
-            //Check to allow only one type of unique basic attack to be added
+            //Check to allow only one type of unique special attack to be added
             foreach (SpecialAttack att in SpecialAtt)
             {
                 if (att.Name.ToLower().Equals(Type.ToLower()))
