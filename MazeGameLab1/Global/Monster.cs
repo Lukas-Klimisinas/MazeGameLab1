@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MazeGameLab1.AbstractFactory;
+using MazeGameLab1.Decorator;
 
 namespace MazeGameLab1.Global
 {

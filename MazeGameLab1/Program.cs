@@ -3,6 +3,7 @@ using MazeGameLab1.Global;
 using MazeGameLab1.Factory;
 using MazeGameLab1.Builder;
 using MazeGameLab1.Bridge;
+using MazeGameLab1.Decorator;
 
 namespace MazeGameLab1
 {
@@ -35,6 +36,12 @@ namespace MazeGameLab1
                     newMonster.AddSpecialAttack("really big punch");
 
                     newMonster.Talk();
+
+                    Console.WriteLine("\n -----Decorator start----- \n");
+
+                    Console.WriteLine("\n Monster totally legitemately gets red weapon! \n");
+
+                    Console.WriteLine("\n -----Decorator END----- \n");
                 }
 
                 Console.WriteLine("\n -----Builder----- \n");
