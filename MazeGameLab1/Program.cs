@@ -37,6 +37,22 @@ namespace MazeGameLab1
 
                     newMonster.Talk();
 
+                    Console.WriteLine();
+
+                    newMonster.Move();
+
+                    newMonster.ChangeAlgorithm("fast");
+                    newMonster.Move();
+
+                    newMonster.ChangeAlgorithm("chasing");
+                    newMonster.Move();
+
+                    newMonster.ChangeAlgorithm("slow");
+                    newMonster.Move();
+
+                    newMonster.ChangeAlgorithm("random");
+                    newMonster.Move();
+
                     Console.WriteLine("\n -----Decorator start----- \n");
 
                     Console.WriteLine("\n Monster totally legitemately gets red weapon! \n");
@@ -56,6 +72,7 @@ namespace MazeGameLab1
 
                 Console.WriteLine("-----Builder END-----");
 
+                Console.WriteLine("\n-----Bridge START-----");
                 Console.WriteLine("\nCreating player");
 
                 Player p = new Player("Jhon", 1, false)
@@ -70,6 +87,7 @@ namespace MazeGameLab1
                 Console.WriteLine(p.ToString() + $" ({p.GetHashCode()})" + "\n" + p.ui.ToString() + $" ({p.ui.GetHashCode()})");
 
                 Console.WriteLine();
+                Console.WriteLine("-----Bridge END-----");
             }
         }
     }

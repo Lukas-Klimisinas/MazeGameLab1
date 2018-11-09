@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MazeGameLab1.AbstractFactory;
 using MazeGameLab1.Decorator;
+using MazeGameLab1.Strategy;
 
 namespace MazeGameLab1.Global
 {
@@ -15,6 +16,8 @@ namespace MazeGameLab1.Global
         int Damage;
         int DropAmount;
         bool IsDead;
+
+        private MovementAlgorithm MoveAlgo;
 
         readonly BasicAttackFactory BFa;
         readonly SpecialAttackFactory SFa;
@@ -37,16 +40,41 @@ namespace MazeGameLab1.Global
             SpecialAtt = new List<SpecialAttack>();
             BFa = new BasicAttackFactory();
             SFa = new SpecialAttackFactory();
+            MoveAlgo = new RandDef();
         }
 
         public void Move()
         {
-
+            if(MoveAlgo != null)
+            {
+                MoveAlgo.Move();
+            }
         }
 
-        public void ChangeAlgorithm()
+        public void ChangeAlgorithm(string Type)
         {
+            switch (Type.ToLower())
+            {
+                case "fast":
+                    MoveAlgo = new Fast();
+                    break;
 
+                case "chasing":
+                    MoveAlgo = new Chasing();
+                    break;
+
+                case "slow":
+                    MoveAlgo = new Slow();
+                    break;
+
+                case "default":
+                    MoveAlgo = new RandDef();
+                    break;
+                
+                default:
+                    MoveAlgo = new RandDef();
+                    break;
+            }
         }
 
         public void HitPlayer()
@@ -114,9 +142,9 @@ namespace MazeGameLab1.Global
                 {   
                     Console.Write(att.ToString() + $" ({att.GetHashCode()}) ");
                 }
-            }
 
-            Console.WriteLine();
+                Console.WriteLine();
+            }
 
             if (SpecialAtt.Count > 0)
             {
@@ -126,9 +154,9 @@ namespace MazeGameLab1.Global
                 {
                     Console.Write(att.ToString() + $" ({att.GetHashCode()}) ");
                 }
-            }
 
-            Console.WriteLine();
+                Console.WriteLine();
+            }
         }
     }
 }
