@@ -14,11 +14,11 @@ namespace MazeGameLab1.Factory
                 case "big":
                     return new BigEnemy(posx, posy, h, s, dist, dam, dr, isd);
                 case "blue":
-                    return new BlueEnemy(posx, posy, h, s, dist, dam, dr, isd); ;
+                    return new BlueEnemy(posx, posy, h, s, dist, dam, dr, isd);
                 case "fast":
-                    return new FastEnemy(posx, posy, h, s, dist, dam, dr, isd); ;
+                    return new FastEnemy(posx, posy, h, s, dist, dam, dr, isd);
                 case "red":
-                    return new RedEnemy(posx, posy, h, s, dist, dam, dr, isd); ;
+                    return new RedEnemy(posx, posy, h, s, dist, dam, dr, isd);
                 default:
                     Console.WriteLine("Unknwon Enemy Type");
                     return null;

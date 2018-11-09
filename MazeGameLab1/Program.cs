@@ -75,11 +75,11 @@ namespace MazeGameLab1
                 Console.WriteLine("\n-----Bridge START-----");
                 Console.WriteLine("\nCreating player");
 
-                Player p = new Player("Jhon", 1, false)
+                Player p = new Player("wizard", "Harry", 1, false)
                 {
                     ui = new LightUI()
                 };
-
+                
                 Console.WriteLine(p.ToString() + $" ({p.GetHashCode()})" + "\n" + p.ui.ToString() + $" ({p.ui.GetHashCode()})");
 
                 Console.WriteLine("Changing UI");
@@ -88,6 +88,19 @@ namespace MazeGameLab1
 
                 Console.WriteLine();
                 Console.WriteLine("-----Bridge END-----");
+
+                Console.WriteLine("\n-----Adapter START-----");
+                Console.WriteLine(p.ToString());
+                p.Attack();
+                p.Defend();
+                p.Escape();
+                Console.WriteLine("\nNew knight player");
+                Player Kn = new Player("knight", "Arc", 100, true);
+                Console.WriteLine(Kn.ToString());
+                Kn.Attack();
+                Kn.Defend();
+                Kn.Escape();
+                Console.WriteLine("-----Adapter END-----");
             }
         }
     }
