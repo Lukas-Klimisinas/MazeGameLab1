@@ -1,10 +1,11 @@
 using System;
 using MazeGameLab1.Bridge;
 using MazeGameLab1.Adapter;
+using MazeGameLab1.Decorator;
 
 namespace MazeGameLab1.Global
 {
-    class Player : UI, IPlayer
+    class Player : UI, IPlayer, ISkin
     {
         public string UserName { get; set; }
         public int Coins { get; set; }
@@ -83,6 +84,11 @@ namespace MazeGameLab1.Global
         {
             if (_player != null)
                 _player.Escape();
+        }
+
+        public string draw()
+        {
+            return "drawing player weapon";
         }
     }
 }
