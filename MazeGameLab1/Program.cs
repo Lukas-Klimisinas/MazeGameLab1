@@ -52,12 +52,6 @@ namespace MazeGameLab1
 
                     newMonster.ChangeAlgorithm("random");
                     newMonster.Move();
-
-                    Console.WriteLine("\n -----Decorator start----- \n");
-
-                    Console.WriteLine("\n Monster totally legitemately gets red weapon! \n");
-
-                    Console.WriteLine("\n -----Decorator END----- \n");
                 }
 
                 Console.WriteLine("\n -----Builder----- \n");
@@ -79,6 +73,14 @@ namespace MazeGameLab1
                 {
                     ui = new LightUI()
                 };
+
+                Console.WriteLine("\n -----Decorator start----- \n");
+
+                ISkin blue = new BlueWeapon(p);
+                blue = new BlueWeapon(blue);
+                Console.WriteLine(blue.draw());
+
+                Console.WriteLine("\n -----Decorator END----- \n");
 
                 Console.WriteLine(p.ToString() + $" ({p.GetHashCode()})" + "\n" + p.ui.ToString() + $" ({p.ui.GetHashCode()})");
 

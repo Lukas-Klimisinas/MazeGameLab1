@@ -1,9 +1,10 @@
 using System;
 using MazeGameLab1.Bridge;
+using MazeGameLab1.Decorator;
 
 namespace MazeGameLab1.Global
 {
-    class Player : UI
+    class Player : UI, ISkin
     {
         private string UserName { get; set; }
         private int Coins { get; set; }
@@ -34,6 +35,11 @@ namespace MazeGameLab1.Global
         public override string ToString()
         {
             return $"Player {UserName}";
+        }
+
+        public string draw()
+        {
+            return "drawing player weapon";
         }
     }
 }
