@@ -3,6 +3,7 @@ using MazeGameLab1.Global;
 
 namespace Tests
 {
+    //https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit
     public class MazeTest
     {
         private UnitMaze _unitMaze;
