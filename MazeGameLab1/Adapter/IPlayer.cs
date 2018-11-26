@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MazeGameLab1.Adapter
+﻿namespace MazeGameLab1.Adapter
 {
-    interface IPlayer
+    public interface IPlayer
     {
         void Attack();
         void Defend();

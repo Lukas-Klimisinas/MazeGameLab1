@@ -2,7 +2,7 @@
 
 namespace MazeGameLab1.AbstractFactory
 {
-    class Punch : BasicAttack
+    public class Punch : BasicAttack
     {
         private readonly int Dmg = 5;
         private readonly double Rng = 1;

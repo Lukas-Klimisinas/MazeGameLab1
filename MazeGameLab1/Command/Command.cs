@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MazeGameLab1.Command
+﻿namespace MazeGameLab1.Command
 {
-    class Command
+    public class Command
     {
     }
 }

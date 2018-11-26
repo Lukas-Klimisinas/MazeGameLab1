@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MazeGameLab1.Observer
+﻿namespace MazeGameLab1.Observer
 {
-    class Observer
+    public class Observer
     {
     }
 }

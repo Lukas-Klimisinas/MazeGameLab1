@@ -1,6 +1,6 @@
 ﻿namespace MazeGameLab1.Adapter
 {
-    interface IWizard
+    public interface IWizard
     {
         void ShootFireBall();
         void SummonPunchingBag();
