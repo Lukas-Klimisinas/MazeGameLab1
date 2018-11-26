@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MazeGameLab1.Prototype
+﻿namespace MazeGameLab1.Prototype
 {
-    class Prototype
+    public class Prototype
     {
     }
 }

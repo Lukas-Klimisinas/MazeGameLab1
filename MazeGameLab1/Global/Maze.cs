@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MazeGameLab1.Global
 {
-    class Maze
+    public class Maze
     {
         int Size;
         int PlayerCount;

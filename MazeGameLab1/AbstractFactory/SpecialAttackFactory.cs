@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MazeGameLab1.AbstractFactory
+﻿namespace MazeGameLab1.AbstractFactory
 {
-    class SpecialAttackFactory : AttackFactory
+    public class SpecialAttackFactory : AttackFactory
     {
         public override BasicAttack CreateBasicAttack(string Type)
         {

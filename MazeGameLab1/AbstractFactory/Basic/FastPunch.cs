@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MazeGameLab1.AbstractFactory
 {
-    class FastPunch : BasicAttack
+    public class FastPunch : BasicAttack
     {
         private readonly int Dmg = 3;
         private readonly double Rng = 0.8;

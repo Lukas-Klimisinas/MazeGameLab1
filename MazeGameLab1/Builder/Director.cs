@@ -1,11 +1,9 @@
 ﻿using MazeGameLab1.Global;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MazeGameLab1.Builder
 {
-    class Director
+    public class Director
     {
         public void Construct(IBuilder Builder)
         {

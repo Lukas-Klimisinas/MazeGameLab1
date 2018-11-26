@@ -18,7 +18,21 @@ namespace MazeGameLab1
         {
             IFactory fact = new MonsterFactory();
 
-            while (true)
+            //UnitMaze UMaze = new UnitMaze();
+
+            /*Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("down"));
+            Console.WriteLine(UMaze.Move("down"));*/
+
+            //Epic turn off of loop
+            while (false)
             {
                 Console.WriteLine("-------------------------------------------------------------------");
                 Console.WriteLine($"Choose Monster: {MonsterTypes.Big} {MonsterTypes.Blue} {MonsterTypes.Fast} {MonsterTypes.Red}");

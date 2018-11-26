@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using MazeGameLab1.AbstractFactory;
-using MazeGameLab1.Decorator;
 using MazeGameLab1.Strategy;
 
 namespace MazeGameLab1.Global
 {
-    class Monster
+    public class Monster
     {
         int PositionX;
         int PositionY;

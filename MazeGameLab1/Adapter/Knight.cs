@@ -2,7 +2,7 @@
 
 namespace MazeGameLab1.Adapter
 {
-    class Knight : IKnight
+    public class Knight : IKnight
     {
         public void AttackWithSword()
         {

@@ -1,6 +1,6 @@
 ﻿namespace MazeGameLab1.Singleton
 {
-    class Singleton
+    public class Singleton
     {
         private static readonly Singleton instance = new Singleton();
 

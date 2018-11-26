@@ -2,7 +2,7 @@
 
 namespace MazeGameLab1.Adapter
 {
-    class Wizard : IWizard
+    public class Wizard : IWizard
     {
         public void ShootFireBall()
         {

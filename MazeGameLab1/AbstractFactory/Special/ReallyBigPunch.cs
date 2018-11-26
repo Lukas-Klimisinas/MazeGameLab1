@@ -2,7 +2,7 @@
 
 namespace MazeGameLab1.AbstractFactory
 {
-    class ReallyBigPunch : SpecialAttack
+    public class ReallyBigPunch : SpecialAttack
     {
         private readonly int Dmg = 20;
         private readonly double Rng = 3;
