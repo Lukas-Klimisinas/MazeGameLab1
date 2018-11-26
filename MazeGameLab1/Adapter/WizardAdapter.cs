@@ -1,6 +1,6 @@
 ﻿namespace MazeGameLab1.Adapter
 {
-    class WizardAdapter : IPlayer
+    public class WizardAdapter : IPlayer
     {
         private readonly IWizard _wizard;
 

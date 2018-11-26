@@ -2,7 +2,7 @@
 
 namespace MazeGameLab1.Bridge
 {
-    class DarkUI : SkinUI
+    public class DarkUI : SkinUI
     {
         public override void ApplySkin()
         {

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MazeGameLab1.Strategy
 {
-    class Slow : MovementAlgorithm
+    public class Slow : MovementAlgorithm
     {
         public override void Move()
         {

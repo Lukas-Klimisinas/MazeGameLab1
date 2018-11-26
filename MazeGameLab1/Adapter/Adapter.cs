@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MazeGameLab1.Adapter
 {
-    class Adapter
+    public class Adapter
     {
     }
 }

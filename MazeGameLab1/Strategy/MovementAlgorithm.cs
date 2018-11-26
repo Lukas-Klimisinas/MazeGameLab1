@@ -1,6 +1,6 @@
 ﻿namespace MazeGameLab1.Strategy
 {
-    abstract class MovementAlgorithm
+    public abstract class MovementAlgorithm
     {
         abstract public void Move();
     }

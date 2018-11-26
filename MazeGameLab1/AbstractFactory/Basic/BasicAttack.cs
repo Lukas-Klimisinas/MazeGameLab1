@@ -1,6 +1,6 @@
 ﻿namespace MazeGameLab1.AbstractFactory
 {
-    abstract class BasicAttack
+    public abstract class BasicAttack
     {
         public abstract int DealsDamage { get; }
         public abstract double Range { get; }

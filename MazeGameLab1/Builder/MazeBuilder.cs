@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using MazeGameLab1.Global;
 
 namespace MazeGameLab1.Builder
 {
-    class MazeBuilder : IBuilder
+    public class MazeBuilder : IBuilder
     {
-
         private Maze NewMaze = new Maze();
 
         public override void BuildMonsters(List<Monster> Monsters)
