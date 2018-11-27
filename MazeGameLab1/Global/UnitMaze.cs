@@ -8,8 +8,12 @@ namespace MazeGameLab1.Global
         private readonly int MazeWidth = 10;
         private readonly int MazeHeight = 10;
 
+        public readonly int HealthTick = 10;
+
         private Point PlayerPosition = new Point(6, 9);
         private Point WinPlace = new Point(4, 5);
+
+        public Player _player { get; set; }
 
         public UnitMaze()
         {
@@ -19,6 +23,8 @@ namespace MazeGameLab1.Global
             }
 
             HardcodeFTW FTW = new HardcodeFTW(ref Maze);
+
+            this._player = new Player("knight", 100, true);
         }
 
         private Point CalculateMove(int Direction)
@@ -50,10 +56,19 @@ namespace MazeGameLab1.Global
             return false;
         }
 
+        private bool ReduceHealth()
+        {
+            if(this.Maze[this.PlayerPosition.Y][this.PlayerPosition.X] == 4) 
+                return true;
+            
+            return false;
+        }
+
         /// <summary>
         /// Return: 1 if moved
         ///         -1 if cant move
         ///         2 if made move is winning one
+        ///         3 moved and took the key
         /// </summary>
         public int Move(string Dir)
         {
@@ -92,7 +107,20 @@ namespace MazeGameLab1.Global
             if (this.Maze[NewPos.Y][NewPos.X] == 1) // If its a wall
                 return -1;
 
+            if (this.Maze[NewPos.Y][NewPos.X] == 6 && !this._player.HasDoorKey) // If it is door and player does not have a key
+                return -1;
+
             this.PlayerPosition = NewPos;
+
+            if (ReduceHealth())
+                this._player.Health -= this.HealthTick;
+
+            if (this.Maze[NewPos.Y][NewPos.X] == 5 && !this._player.HasDoorKey) // If player has found a key
+            { 
+                this._player.HasDoorKey = true;
+
+                return 3;
+            }
 
             if (CheckWin())
                 return 2;
