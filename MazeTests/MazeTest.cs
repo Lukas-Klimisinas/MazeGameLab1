@@ -24,7 +24,7 @@ namespace Tests
         }
 
         [Test]
-        public void MoveToWinPlace()
+        public void MoveToWinPlaceFail()
         {
             this._unitMaze = new UnitMaze();
 
@@ -40,7 +40,77 @@ namespace Tests
 
             int FinalRes = this._unitMaze.Move("down");
 
-            Assert.AreEqual(2, FinalRes, 0, $"Should be at winning place");
+            Assert.AreEqual(-1, FinalRes, 0, "Should not be able to win because door is locked and player doesn't have a key");
+        }
+
+        [Test]
+        public void PlayerTakesDamage()
+        {
+            this._unitMaze = new UnitMaze();
+
+            int Tick = this._unitMaze.HealthTick;
+            double Expected = this._unitMaze._player.Health - Tick;
+
+            this._unitMaze.Move("up");
+
+            Assert.AreEqual(Expected, this._unitMaze._player.Health, 0, $"Health should be reduced by {Tick}");
+        }
+
+        [Test]
+        public void GetTheKey()
+        {
+            this._unitMaze = new UnitMaze();
+
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+
+            int FinalRes = this._unitMaze.Move("left");
+
+            Assert.AreEqual(3, FinalRes, 0, "Player should have picked up the key");
+        }
+
+        [Test]
+        public void CompleteMaze()
+        {
+            this._unitMaze = new UnitMaze();
+
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("right");
+            this._unitMaze.Move("right");
+            this._unitMaze.Move("right");
+            this._unitMaze.Move("right");
+            this._unitMaze.Move("right");
+            this._unitMaze.Move("down");
+            this._unitMaze.Move("down");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("left");
+            this._unitMaze.Move("down");
+
+            int FinalRes = this._unitMaze.Move("down");
+
+            Assert.AreEqual(2, FinalRes, 0, "Player should have completed the maze");
         }
     }
 }

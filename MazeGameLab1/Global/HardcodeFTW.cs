@@ -9,6 +9,9 @@
              * 0 => Walkable space
              * 2 => Players current position
              * 3 => Win place
+             * 4 => Takes damage there
+             * 5 => Key for unlocking the door
+             * 6 => Door
             */
 
             #region First row
@@ -26,7 +29,7 @@
 
             #region Second row
             Maze[1][0] = 1;
-            Maze[1][1] = 0;
+            Maze[1][1] = 5;
             Maze[1][2] = 0;
             Maze[1][3] = 0;
             Maze[1][4] = 0;
@@ -55,7 +58,7 @@
             Maze[3][1] = 0;
             Maze[3][2] = 0;
             Maze[3][3] = 1;
-            Maze[3][4] = 0;
+            Maze[3][4] = 6;
             Maze[3][5] = 0;
             Maze[3][6] = 0;
             Maze[3][7] = 1;
@@ -122,7 +125,7 @@
             Maze[8][3] = 0;
             Maze[8][4] = 0;
             Maze[8][5] = 0;
-            Maze[8][6] = 0;
+            Maze[8][6] = 4;
             Maze[8][7] = 1;
             Maze[8][8] = 1;
             Maze[8][9] = 1;
