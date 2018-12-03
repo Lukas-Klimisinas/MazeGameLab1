@@ -8,7 +8,9 @@ namespace MazeGameLab1.Global
     {
         public string UserName { get; set; }
         public int Coins { get; set; }
+        public double Health { get; set; } = 100.0;
         public bool IsOnline { get; set; }
+        public bool HasDoorKey { get; set; } = false;
         private IPlayer _player { get; set; }
         
         public Player(string pclass, string N, int C, bool On)

@@ -18,14 +18,28 @@ namespace MazeGameLab1
         {
             IFactory fact = new MonsterFactory();
 
-            //UnitMaze UMaze = new UnitMaze();
+            /*UnitMaze UMaze = new UnitMaze();
 
-            /*Console.WriteLine(UMaze.Move("up"));
             Console.WriteLine(UMaze.Move("up"));
             Console.WriteLine(UMaze.Move("up"));
             Console.WriteLine(UMaze.Move("up"));
             Console.WriteLine(UMaze.Move("up"));
             Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("up"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("left"));
+            Console.WriteLine(UMaze.Move("right"));
+            Console.WriteLine(UMaze.Move("right"));
+            Console.WriteLine(UMaze.Move("right"));
+            Console.WriteLine(UMaze.Move("right"));
+            Console.WriteLine(UMaze.Move("right"));
+            Console.WriteLine(UMaze.Move("down"));
+            Console.WriteLine(UMaze.Move("down"));
             Console.WriteLine(UMaze.Move("left"));
             Console.WriteLine(UMaze.Move("left"));
             Console.WriteLine(UMaze.Move("down"));
