@@ -14,6 +14,7 @@ namespace Tests
         [TestCase("down")]
         [TestCase("left")]
         [TestCase("right")]
+        [TestCase("wrongdir")]
         public void MoveFromStartPointFails(string Dir)
         {
             this._unitMaze = new UnitMaze();
