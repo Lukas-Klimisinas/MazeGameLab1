@@ -70,8 +70,7 @@ namespace MazeGameLab1.Global
 
         private bool DeathFromPit()
         {
-            if (this.PlayerPosition.X == this.Deathpit[0].X && this.PlayerPosition.Y == this.Deathpit[0].Y || 
-                this.PlayerPosition.X == this.Deathpit[1].X && this.PlayerPosition.Y == this.Deathpit[1].Y)
+            if (this.PlayerPosition.X == this.Deathpit[0].X && this.PlayerPosition.Y == this.Deathpit[0].Y)
                 return true;
 
             return false;
@@ -83,6 +82,7 @@ namespace MazeGameLab1.Global
         ///         -1 if cant move
         ///         2 if made move is winning one
         ///         3 moved and took the key
+        ///         6 if player died in the pit
         /// </summary>
         public int Move(string Dir)
         {
@@ -142,7 +142,6 @@ namespace MazeGameLab1.Global
 
             }
             
-
             if (CheckWin())
                 return 2;
 
