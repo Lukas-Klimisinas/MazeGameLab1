@@ -57,6 +57,28 @@ namespace Tests
         }
 
         [Test]
+        public void DieInPit()
+        {
+            this._unitMaze = new UnitMaze();
+
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+
+
+            int FinalRes = this._unitMaze.Move("right");
+
+            Assert.AreEqual(6, FinalRes, 0, "Player should have died in a pit");
+        }
+
+
+
+        [Test]
         public void GetTheKey()
         {
             this._unitMaze = new UnitMaze();
