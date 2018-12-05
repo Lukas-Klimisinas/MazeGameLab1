@@ -13,7 +13,7 @@ namespace MazeGameLab1
         {
             Big, Blue, Fast, Red
         }
-
+        //fak
         static void Main(string[] args)
         {
             IFactory fact = new MonsterFactory();

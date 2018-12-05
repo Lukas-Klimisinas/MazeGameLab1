@@ -12,6 +12,10 @@ namespace MazeGameLab1.Global
 
         private Point PlayerPosition = new Point(6, 9);
         private Point WinPlace = new Point(4, 5);
+        private Point[] Deathpit = new Point[] 
+        {
+            new Point (7,1), new Point (1, 7)
+        };
 
         public Player _player { get; set; }
 
@@ -64,11 +68,21 @@ namespace MazeGameLab1.Global
             return false;
         }
 
+        private bool DeathFromPit()
+        {
+            if (this.PlayerPosition.X == this.Deathpit[0].X && this.PlayerPosition.Y == this.Deathpit[0].Y)
+                return true;
+
+            return false;
+        }
+
+
         /// <summary>
         /// Return: 1 if moved
         ///         -1 if cant move
         ///         2 if made move is winning one
         ///         3 moved and took the key
+        ///         6 if player died in the pit
         /// </summary>
         public int Move(string Dir)
         {
@@ -121,7 +135,13 @@ namespace MazeGameLab1.Global
 
                 return 3;
             }
+            if (DeathFromPit())
+            {
+                this._player.Health = 0;
+                return 6;
 
+            }
+            
             if (CheckWin())
                 return 2;
 

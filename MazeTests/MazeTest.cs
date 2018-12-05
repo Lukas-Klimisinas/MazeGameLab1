@@ -14,6 +14,7 @@ namespace Tests
         [TestCase("down")]
         [TestCase("left")]
         [TestCase("right")]
+        [TestCase("wrongdir")]
         public void MoveFromStartPointFails(string Dir)
         {
             this._unitMaze = new UnitMaze();
@@ -54,6 +55,25 @@ namespace Tests
             this._unitMaze.Move("up");
 
             Assert.AreEqual(Expected, this._unitMaze._player.Health, 0, $"Health should be reduced by {Tick}");
+        }
+
+        [Test]
+        public void DieInPit()
+        {
+            this._unitMaze = new UnitMaze();
+
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+
+            int FinalRes = this._unitMaze.Move("right");
+
+            Assert.AreEqual(6, FinalRes, 0, "Player should have died in a pit");
         }
 
         [Test]
