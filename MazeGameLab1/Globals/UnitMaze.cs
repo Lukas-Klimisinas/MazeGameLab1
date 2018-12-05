@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
+using System.Globalization;
 
-namespace MazeGameLab1.Global
+namespace MazeGameLab1.Globals
 {
     public class UnitMaze
     {
@@ -8,7 +9,7 @@ namespace MazeGameLab1.Global
         private readonly int MazeWidth = 10;
         private readonly int MazeHeight = 10;
 
-        public readonly int HealthTick = 10;
+        public int HealthTick { get; set; } = 10;
 
         private Point PlayerPosition = new Point(6, 9);
         private Point WinPlace = new Point(4, 5);
@@ -17,7 +18,7 @@ namespace MazeGameLab1.Global
             new Point (7,1), new Point (1, 7)
         };
 
-        public Player _player { get; set; }
+        public Player player { get; set; }
 
         public UnitMaze()
         {
@@ -28,7 +29,7 @@ namespace MazeGameLab1.Global
 
             HardcodeFTW FTW = new HardcodeFTW(ref Maze);
 
-            this._player = new Player("knight", 100, true);
+            this.player = new Player("knight", 100, true);
         }
 
         private Point CalculateMove(int Direction)
@@ -88,7 +89,7 @@ namespace MazeGameLab1.Global
         {
             int DirId = -1;
 
-            switch (Dir.ToLower())
+            switch (Dir.ToLower(CultureInfo.CurrentCulture))
             {
                 case "up":
                     DirId = 0;
@@ -121,23 +122,23 @@ namespace MazeGameLab1.Global
             if (this.Maze[NewPos.Y][NewPos.X] == 1) // If its a wall
                 return -1;
 
-            if (this.Maze[NewPos.Y][NewPos.X] == 6 && !this._player.HasDoorKey) // If it is door and player does not have a key
+            if (this.Maze[NewPos.Y][NewPos.X] == 6 && !this.player.HasDoorKey) // If it is door and player does not have a key
                 return -1;
 
             this.PlayerPosition = NewPos;
 
             if (ReduceHealth())
-                this._player.Health -= this.HealthTick;
+                this.player.Health -= this.HealthTick;
 
-            if (this.Maze[NewPos.Y][NewPos.X] == 5 && !this._player.HasDoorKey) // If player has found a key
+            if (this.Maze[NewPos.Y][NewPos.X] == 5 && !this.player.HasDoorKey) // If player has found a key
             { 
-                this._player.HasDoorKey = true;
+                this.player.HasDoorKey = true;
 
                 return 3;
             }
             if (DeathFromPit())
             {
-                this._player.Health = 0;
+                this.player.Health = 0;
                 return 6;
 
             }

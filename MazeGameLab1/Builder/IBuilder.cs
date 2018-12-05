@@ -1,4 +1,4 @@
-﻿using MazeGameLab1.Global;
+﻿using MazeGameLab1.Globals;
 using System.Collections.Generic;
 
 namespace MazeGameLab1.Builder

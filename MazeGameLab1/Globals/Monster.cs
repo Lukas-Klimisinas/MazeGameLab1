@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using MazeGameLab1.AbstractFactory;
 using MazeGameLab1.Strategy;
 
-namespace MazeGameLab1.Global
+namespace MazeGameLab1.Globals
 {
     public class Monster
     {
@@ -52,7 +53,7 @@ namespace MazeGameLab1.Global
 
         public void ChangeAlgorithm(string Type)
         {
-            switch (Type.ToLower())
+            switch (Type.ToLower(CultureInfo.CurrentCulture))
             {
                 case "fast":
                     MoveAlgo = new Fast();
@@ -76,12 +77,12 @@ namespace MazeGameLab1.Global
             }
         }
 
-        public void HitPlayer()
+        public static void HitPlayer()
         {
             
         }
 
-        public void Die()
+        public static void Die()
         {
 
         }
@@ -96,7 +97,7 @@ namespace MazeGameLab1.Global
             //Check to allow only one type of unique basic attack to be added
             foreach (BasicAttack att in BasicAtt)
             {
-                if (att.Name.ToLower().Equals(Type.ToLower()))
+                if (att.Name.ToLower(CultureInfo.CurrentCulture).Equals(Type.ToLower(CultureInfo.CurrentCulture), StringComparison.CurrentCulture))
                     return;
             }
             
@@ -111,7 +112,7 @@ namespace MazeGameLab1.Global
             //Check to allow only one type of unique special attack to be added
             foreach (SpecialAttack att in SpecialAtt)
             {
-                if (att.Name.ToLower().Equals(Type.ToLower()))
+                if (att.Name.ToLower(CultureInfo.CurrentCulture).Equals(Type.ToLower(CultureInfo.CurrentCulture), StringComparison.CurrentCulture))
                     return;
             }
 

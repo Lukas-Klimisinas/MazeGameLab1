@@ -1,10 +1,11 @@
 using MazeGameLab1.Bridge;
 using MazeGameLab1.Adapter;
-using MazeGameLab1.Decorator;
+using MazeGameLab1.Decorators;
+using System.Globalization;
 
-namespace MazeGameLab1.Global
+namespace MazeGameLab1.Globals
 {
-    public class Player : UI, IPlayer, ISkin
+    public class Player : MazeUI, IPlayer, ISkin
     {
         public string UserName { get; set; }
         public int Coins { get; set; }
@@ -33,7 +34,7 @@ namespace MazeGameLab1.Global
 
         private void SetUpClass(string pclass)
         {
-            switch (pclass.ToLower())
+            switch (pclass.ToLower(CultureInfo.CurrentCulture))
             {
                 case "knight":
                     _player = new KnightAdapter(new Knight());
@@ -49,12 +50,12 @@ namespace MazeGameLab1.Global
             }
         }
 
-        public void SelectMaze()
+        public static void SelectMaze()
         {
 
         }
 
-        public void SelectMode()
+        public static void SelectMode()
         {
 
         }

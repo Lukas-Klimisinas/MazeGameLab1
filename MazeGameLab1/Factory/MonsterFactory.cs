@@ -1,5 +1,6 @@
 ﻿using System;
-using MazeGameLab1.Global;
+using System.Globalization;
+using MazeGameLab1.Globals;
 
 namespace MazeGameLab1.Factory
 {
@@ -7,7 +8,7 @@ namespace MazeGameLab1.Factory
     {
         public override Monster CreateEnemy(string type, int posx, int posy, int h, int s, int dist, int dam, int dr, bool isd)
         {
-            switch (type.ToLower())
+            switch (type.ToLower(CultureInfo.CurrentCulture))
             {
                 case "big":
                     return new BigEnemy(posx, posy, h, s, dist, dam, dr, isd);

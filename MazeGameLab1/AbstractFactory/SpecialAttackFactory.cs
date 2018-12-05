@@ -1,4 +1,6 @@
-﻿namespace MazeGameLab1.AbstractFactory
+﻿using System.Globalization;
+
+namespace MazeGameLab1.AbstractFactory
 {
     public class SpecialAttackFactory : AttackFactory
     {
@@ -9,7 +11,7 @@
 
         public override SpecialAttack CreateSpecialAttack(string Type)
         {
-            switch (Type.ToLower())
+            switch (Type.ToLower(CultureInfo.CurrentCulture))
             {
                 case "big punch":
                     return new BigPunch();

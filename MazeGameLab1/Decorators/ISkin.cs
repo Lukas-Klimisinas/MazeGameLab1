@@ -1,4 +1,4 @@
-﻿namespace MazeGameLab1.Decorator
+﻿namespace MazeGameLab1.Decorators
 {
     public interface ISkin
     {

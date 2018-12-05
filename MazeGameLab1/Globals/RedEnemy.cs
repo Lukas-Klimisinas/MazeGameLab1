@@ -1,4 +1,4 @@
-﻿namespace MazeGameLab1.Global
+﻿namespace MazeGameLab1.Globals
 {
     public class RedEnemy : Monster
     {

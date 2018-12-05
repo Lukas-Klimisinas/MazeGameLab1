@@ -1,9 +1,9 @@
 ﻿using System;
-using MazeGameLab1.Global;
+using MazeGameLab1.Globals;
 using MazeGameLab1.Factory;
 using MazeGameLab1.Builder;
 using MazeGameLab1.Bridge;
-using MazeGameLab1.Decorator;
+using MazeGameLab1.Decorators;
 
 namespace MazeGameLab1
 {

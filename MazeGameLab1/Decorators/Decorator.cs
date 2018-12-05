@@ -1,8 +1,8 @@
-﻿namespace MazeGameLab1.Decorator
+﻿namespace MazeGameLab1.Decorators
 {
     public abstract class Decorator : ISkin
     {
-        protected ISkin skin = null;
+        ISkin skin = null;
 
         public string draw() => "super view " + skin.draw();
         public Decorator(ISkin skin) => this.skin = skin;

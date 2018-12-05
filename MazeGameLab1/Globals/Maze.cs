@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MazeGameLab1.Global
+namespace MazeGameLab1.Globals
 {
     public class Maze
     {
@@ -15,22 +15,22 @@ namespace MazeGameLab1.Global
 
         }
 
-        public void StartGame()
+        public static void StartGame()
         {
 
         }
 
-        public void FinishGame()
+        public static void FinishGame()
         {
 
         }
 
-        public void QuitGame()
+        public static void QuitGame()
         {
 
         }
 
-        public void Draw()
+        public static void Draw()
         {
 
         }

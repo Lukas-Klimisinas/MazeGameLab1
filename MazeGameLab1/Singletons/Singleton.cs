@@ -1,4 +1,4 @@
-﻿namespace MazeGameLab1.Singleton
+﻿namespace MazeGameLab1.Singletons
 {
     public class Singleton
     {
