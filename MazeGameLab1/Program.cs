@@ -4,6 +4,9 @@ using MazeGameLab1.Factory;
 using MazeGameLab1.Builder;
 using MazeGameLab1.Bridge;
 using MazeGameLab1.Decorators;
+using MazeGameLab1.Enumerable;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace MazeGameLab1
 {
@@ -46,7 +49,7 @@ namespace MazeGameLab1
             Console.WriteLine(UMaze.Move("down"));*/
 
             //Epic turn off of loop
-            while (false)
+            while (true)
             {
                 Console.WriteLine("-------------------------------------------------------------------");
                 Console.WriteLine($"Choose Monster: {MonsterTypes.Big} {MonsterTypes.Blue} {MonsterTypes.Fast} {MonsterTypes.Red}");
@@ -130,7 +133,30 @@ namespace MazeGameLab1
                 Kn.Defend();
                 Kn.Escape();
                 Console.WriteLine("-----Adapter END-----");
+
+                Console.WriteLine("\n-----Iterator START-----");
+                MonsterArray array = new MonsterArray();
+                MonsterList list = new MonsterList();
+                MonsterHash hash = new MonsterHash();
+
+                Monster[] monstersArray = array.getMonsters();
+                List<Monster> monstersList = list.getMonsters();
+                HashSet<Monster> monstersHash = hash.getMonsters();
+
+                IEnumerator i1 = array.GetIterator();
+                IEnumerator i2 = list.getIterator();
+                IEnumerator i3 = hash.getIterator();
+
+                canItMoveThroughDifferentMonsters(i1);
+                canItMoveThroughDifferentMonsters(i2);
+                canItMoveThroughDifferentMonsters(i3);
+
+                Console.WriteLine("-----Iterator END-----");
             }
+        }
+        public static void canItMoveThroughDifferentMonsters(IEnumerator i)
+        {
+            Console.WriteLine(i.MoveNext());
         }
     }
 }
