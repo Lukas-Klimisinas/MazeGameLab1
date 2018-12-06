@@ -17,7 +17,7 @@ namespace MazeGameLab1.Proxy
             
             try
             {
-                Bitmap image = new Bitmap(path,true);
+                //Bitmap image = new Bitmap(path,true);
                 
             }
             catch (Exception ex)
@@ -32,7 +32,6 @@ namespace MazeGameLab1.Proxy
 
         public void ShowDisplay()
         {
-
             Console.WriteLine("Display "+ Dispath +" loaded");
         }
     }
