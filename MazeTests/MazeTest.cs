@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using MazeGameLab1.Global;
+using MazeGameLab1.Globals;
 
 namespace Tests
 {
@@ -50,11 +50,30 @@ namespace Tests
             this._unitMaze = new UnitMaze();
 
             int Tick = this._unitMaze.HealthTick;
-            double Expected = this._unitMaze._player.Health - Tick;
+            double Expected = this._unitMaze.player.Health - Tick;
 
             this._unitMaze.Move("up");
 
-            Assert.AreEqual(Expected, this._unitMaze._player.Health, 0, $"Health should be reduced by {Tick}");
+            Assert.AreEqual(Expected, this._unitMaze.player.Health, 0, $"Health should be reduced by {Tick}");
+        }
+
+        [Test]
+        public void DieInPit()
+        {
+            this._unitMaze = new UnitMaze();
+
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+            this._unitMaze.Move("up");
+
+            int FinalRes = this._unitMaze.Move("right");
+
+            Assert.AreEqual(6, FinalRes, 0, "Player should have died in a pit");
         }
 
         [Test]

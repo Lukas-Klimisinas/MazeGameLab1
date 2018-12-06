@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using MazeGameLab1.Global;
+using MazeGameLab1.Globals;
 
 namespace MazeGameLab1.Builder
 {

@@ -5,7 +5,13 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MazeGameLab1", "MazeGameLab1\MazeGameLab1.csproj", "{61BD8432-FB7A-4700-B927-AC66BBE0ED23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MazeTests", "MazeTests\MazeTests.csproj", "{2B8DCEA1-5A85-4EB3-A6B2-6C9333E51485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MazeTests", "MazeTests\MazeTests.csproj", "{2B8DCEA1-5A85-4EB3-A6B2-6C9333E51485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAnalyzer", "CustomAnalyzer\CustomAnalyzer\CustomAnalyzer.csproj", "{2DDA06B3-5EB9-482C-8982-759067C162A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAnalyzer.Test", "CustomAnalyzer\CustomAnalyzer.Test\CustomAnalyzer.Test.csproj", "{F9AEFE8E-CA7B-48E2-A423-11CE755CB7B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAnalyzer.Vsix", "CustomAnalyzer\CustomAnalyzer.Vsix\CustomAnalyzer.Vsix.csproj", "{3C0F53CB-A51F-43A4-BB70-07537DB7DD53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{2B8DCEA1-5A85-4EB3-A6B2-6C9333E51485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B8DCEA1-5A85-4EB3-A6B2-6C9333E51485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B8DCEA1-5A85-4EB3-A6B2-6C9333E51485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDA06B3-5EB9-482C-8982-759067C162A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDA06B3-5EB9-482C-8982-759067C162A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDA06B3-5EB9-482C-8982-759067C162A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDA06B3-5EB9-482C-8982-759067C162A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9AEFE8E-CA7B-48E2-A423-11CE755CB7B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9AEFE8E-CA7B-48E2-A423-11CE755CB7B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9AEFE8E-CA7B-48E2-A423-11CE755CB7B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9AEFE8E-CA7B-48E2-A423-11CE755CB7B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0F53CB-A51F-43A4-BB70-07537DB7DD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0F53CB-A51F-43A4-BB70-07537DB7DD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0F53CB-A51F-43A4-BB70-07537DB7DD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0F53CB-A51F-43A4-BB70-07537DB7DD53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
