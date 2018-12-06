@@ -136,6 +136,7 @@ namespace MazeGameLab1.Globals
 
                 return 3;
             }
+
             if (DeathFromPit())
             {
                 this.player.Health = 0;
