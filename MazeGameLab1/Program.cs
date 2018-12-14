@@ -5,6 +5,8 @@ using MazeGameLab1.Builder;
 using MazeGameLab1.Bridge;
 using MazeGameLab1.Decorators;
 using MazeGameLab1.Enumerable;
+using MazeGameLab1.Mediator;
+using MazeGameLab1.Memento;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -152,6 +154,52 @@ namespace MazeGameLab1
                 canItMoveThroughDifferentMonsters(i3);
 
                 Console.WriteLine("-----Iterator END-----");
+
+                Console.WriteLine("----- Mediator -----");
+
+                //Make monsters
+                Monster one = new BigEnemy(10, 10, 10, 10, 10, 10, 10, false);
+                Monster two = new BlueEnemy(10, 10, 10, 10, 10, 10, 10, false);
+                Monster three = new FastEnemy(10, 10, 10, 10, 10, 10, 10, false);
+
+                //Monster mediator
+                MonsterMediator monsterMediator = new MonsterMediator();
+
+                //Set up mediator
+                one.SetMediator(monsterMediator);
+                two.SetMediator(monsterMediator);
+                three.SetMediator(monsterMediator);
+
+                monsterMediator.addMonster(one);
+                monsterMediator.addMonster(two);
+                monsterMediator.addMonster(three);
+
+                three.Die();
+                Console.WriteLine();
+                one.Die();
+
+                Console.writeLine("----- Mediator END -----");
+
+                Console.WriteLine("----- Memento -----");
+
+
+                //Create monster
+                Monster m = new BigEnemy(10, 10, 10, 10, 10, 10, 10, false);
+
+                m.setState("Defensive");
+
+                //Store internal state
+                Caretaker c = new Caretaker();
+                c.setMemento(m.CreateMemento());
+
+                //Continue changing originator
+                m.setState("Fleeing");
+
+                //Restore saved state
+                m.SetMemento(c.getMememto());
+
+                Console.WriteLine("----- Memento END -----");
+
             }
         }
         public static void canItMoveThroughDifferentMonsters(IEnumerator i)
