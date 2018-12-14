@@ -18,6 +18,7 @@
     <Reference Include="System.Xml">
       <HintPath>System.Xml</HintPath>
     </Reference>
+  </ItemGroup>
     
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <CodeAnalysisRuleSet />
