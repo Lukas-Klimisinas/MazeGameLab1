@@ -1,9 +1,14 @@
 ﻿using System;
-using MazeGameLab1.Global;
+using MazeGameLab1.Globals;
 using MazeGameLab1.Factory;
 using MazeGameLab1.Builder;
 using MazeGameLab1.Bridge;
-using MazeGameLab1.Decorator;
+using MazeGameLab1.Decorators;
+using MazeGameLab1.Enumerable;
+using MazeGameLab1.Mediator;
+using MazeGameLab1.Memento;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace MazeGameLab1
 {
@@ -14,7 +19,7 @@ namespace MazeGameLab1
             Big, Blue, Fast, Red
         }
         //fak
-        static void Main(string[] args)
+        static void Main()
         {
             IFactory fact = new MonsterFactory();
 
@@ -46,7 +51,7 @@ namespace MazeGameLab1
             Console.WriteLine(UMaze.Move("down"));*/
 
             //Epic turn off of loop
-            while (false)
+            while (true)
             {
                 Console.WriteLine("-------------------------------------------------------------------");
                 Console.WriteLine($"Choose Monster: {MonsterTypes.Big} {MonsterTypes.Blue} {MonsterTypes.Fast} {MonsterTypes.Red}");
@@ -130,7 +135,76 @@ namespace MazeGameLab1
                 Kn.Defend();
                 Kn.Escape();
                 Console.WriteLine("-----Adapter END-----");
+
+                Console.WriteLine("\n-----Iterator START-----");
+                MonsterArray array = new MonsterArray();
+                MonsterList list = new MonsterList();
+                MonsterHash hash = new MonsterHash();
+
+                Monster[] monstersArray = array.getMonsters();
+                List<Monster> monstersList = list.getMonsters();
+                HashSet<Monster> monstersHash = hash.getMonsters();
+
+                IEnumerator i1 = array.GetIterator();
+                IEnumerator i2 = list.getIterator();
+                IEnumerator i3 = hash.getIterator();
+
+                canItMoveThroughDifferentMonsters(i1);
+                canItMoveThroughDifferentMonsters(i2);
+                canItMoveThroughDifferentMonsters(i3);
+
+                Console.WriteLine("-----Iterator END-----");
+
+                Console.WriteLine("----- Mediator -----");
+
+                //Make monsters
+                Monster one = new BigEnemy(10, 10, 10, 10, 10, 10, 10, false);
+                Monster two = new BlueEnemy(10, 10, 10, 10, 10, 10, 10, false);
+                Monster three = new FastEnemy(10, 10, 10, 10, 10, 10, 10, false);
+
+                //Monster mediator
+                MonsterMediator monsterMediator = new MonsterMediator();
+
+                //Set up mediator
+                one.SetMediator(monsterMediator);
+                two.SetMediator(monsterMediator);
+                three.SetMediator(monsterMediator);
+
+                monsterMediator.addMonster(one);
+                monsterMediator.addMonster(two);
+                monsterMediator.addMonster(three);
+
+                three.Die();
+                Console.WriteLine();
+                one.Die();
+
+                Console.writeLine("----- Mediator END -----");
+
+                Console.WriteLine("----- Memento -----");
+
+
+                //Create monster
+                Monster m = new BigEnemy(10, 10, 10, 10, 10, 10, 10, false);
+
+                m.setState("Defensive");
+
+                //Store internal state
+                Caretaker c = new Caretaker();
+                c.setMemento(m.CreateMemento());
+
+                //Continue changing originator
+                m.setState("Fleeing");
+
+                //Restore saved state
+                m.SetMemento(c.getMememto());
+
+                Console.WriteLine("----- Memento END -----");
+
             }
+        }
+        public static void canItMoveThroughDifferentMonsters(IEnumerator i)
+        {
+            Console.WriteLine(i.MoveNext());
         }
     }
 }

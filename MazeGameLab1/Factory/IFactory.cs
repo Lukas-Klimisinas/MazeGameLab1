@@ -1,4 +1,4 @@
-﻿using MazeGameLab1.Global;
+﻿using MazeGameLab1.Globals;
 
 namespace MazeGameLab1.Factory
 {
