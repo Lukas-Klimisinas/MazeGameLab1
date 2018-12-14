@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using MazeGameLab1.AbstractFactory;
 using MazeGameLab1.Strategy;
+using MazeGameLab1.State;
 using MazeGameLab1.Mediator;
 using MazeGameLab1.Memento;
 
@@ -10,14 +11,14 @@ namespace MazeGameLab1.Globals
 {
     public class Monster
     {
-        int PositionX;
-        int PositionY;
-        int Health;
-        int Speed;
-        int DistanceToPlayer;
-        int Damage;
-        int DropAmount;
-        bool IsDead;
+        public int PositionX { get; set; }
+        public int PositionY { get; set; }
+        public int Health { get; set; }
+        public int Speed { get; set; }
+        public int DistanceToPlayer { get; set; }
+        public int Damage { get; set; }
+        public int DropAmount { get; set; }
+        public bool IsDead { get; set; }
         string state;
         MonsterMediator hub;
 
@@ -25,6 +26,7 @@ namespace MazeGameLab1.Globals
 
         readonly BasicAttackFactory BFa;
         readonly SpecialAttackFactory SFa;
+        private readonly StateController _stateController;
         
         List<BasicAttack> BasicAtt;
         List<SpecialAttack> SpecialAtt;
@@ -45,6 +47,8 @@ namespace MazeGameLab1.Globals
             BFa = new BasicAttackFactory();
             SFa = new SpecialAttackFactory();
             MoveAlgo = new RandDef();
+
+            this._stateController = new StateController(this);
         }
 
         public void SetMediator(MonsterMediator mediator)
