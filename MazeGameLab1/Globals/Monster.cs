@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using MazeGameLab1.AbstractFactory;
 using MazeGameLab1.Strategy;
+using MazeGameLab1.Mediator;
+using MazeGameLab1.Memento;
 
 namespace MazeGameLab1.Globals
 {
@@ -16,6 +18,8 @@ namespace MazeGameLab1.Globals
         int Damage;
         int DropAmount;
         bool IsDead;
+        string state;
+        MonsterMediator hub;
 
         private MovementAlgorithm MoveAlgo;
 
@@ -41,6 +45,11 @@ namespace MazeGameLab1.Globals
             BFa = new BasicAttackFactory();
             SFa = new SpecialAttackFactory();
             MoveAlgo = new RandDef();
+        }
+
+        public void SetMediator(MonsterMediator mediator)
+        {
+            hub = mediator;
         }
 
         public void Move()
@@ -84,7 +93,34 @@ namespace MazeGameLab1.Globals
 
         public static void Die()
         {
+            Console.WriteLine("I died.");
+            hub.broadcast(this);
+        }
 
+        public void setState(string state)
+        {
+            this.state = state;
+            Console.WriteLine(this.state);
+        }
+
+        public void ChangeState()
+        {
+            Console.WriteLine("State changed");
+        }
+
+        // Creates memento 
+        public MonsterMemento CreateMemento()
+        {
+            return (new Memento.MonsterMemento(state));
+
+        }
+
+        // Restores original state
+        public void SetMemento(MonsterMemento memento)
+        {
+
+            Console.WriteLine("Restoring state...");
+            setState(memento.getState());
         }
 
         public void ReduceHealth(int Dmg)
